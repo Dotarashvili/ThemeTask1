@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="report.bugs" remove="true"/>
+        <referenceBlock name="footer_links" remove="true"/>
+        <referenceContainer name="cms_footer_links_container">
+            <block class="Magento\Framework\View\Element\Html\Links" name="footer_links_cms">
+                <arguments>
+                    <argument name="css_class" xsi:type="string">footer links</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+        <referenceBlock name="footer_links_cms">
+            <block class="Magento\Framework\View\Element\Template" name="footer-custom-content" template="Magento_Cms::my-account.phtml" before="footer"/>
+        </referenceBlock>
+        <referenceBlock name="copyright" template="Magento_Cms::copyright.phtml"/>
+    </body>
+</page>

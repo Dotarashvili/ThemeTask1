@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="checkout_cart_sidebar_item_renderers"/>
+    <body>
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name ="logo_file" xsi:type="string">images/newlogo.png</argument>
+                <argument name ="logo_alt" xsi:type="string">New Logo</argument>
+                <argument name ="logo_img_width" xsi:type="number">182</argument>
+                <argument name ="logo_img_height" xsi:type="number">31</argument>
+            </arguments>
+        </referenceBlock>
+        <referenceBlock name="top.links">
+            <block class="Magento\Customer\Block\Account\Link" name="my-account-link">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">My Account</argument>
+                    <argument name="sortOrder" xsi:type="number">110</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Customer\Block\Account\RegisterLink" name="checkout-link" before="register-link">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">Checkout</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Customer\Block\Account\RegisterLink" name="register-link">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">Register</argument>
+                </arguments>
+            </block>
+            <referenceBlock class="Magento\Framework\View\Element\Template" name="catalog.compare.link"
+                   template="Magento_Catalog::product/compare/link.phtml" remove="true"/>
+        </referenceBlock>
+        <referenceBlock  name="authorization-link" remove="true"/>
+        <referenceBlock name="header">
+            <arguments>
+                <argument name="show_part" xsi:type="string">other</argument>
+            </arguments>
+        </referenceBlock>
+        <referenceContainer name="header-wrapper">
+            <referenceBlock class="Magento\Framework\View\Element\Template" name="top.search" template="Magento_Theme::form.mini.phtml" />
+            <block name="top.menuitems" template="Magento_Theme::nav-links.phtml" />
+        </referenceContainer>
+        <referenceContainer name="page.top">
+            <block class="Magento\Framework\View\Element\Template" name="bottom-header" template="Magento_Theme::categories.phtml"/>
+        </referenceContainer>
+        <referenceContainer name="header.panel">
+            <block class="Magento\Directory\Block\Currency" name="currency" after="store_language" template="Magento_Theme::currency.phtml"/>
+            <block class="Magento\Store\Block\Switcher" name="store_language" as="store_language" before="currency" template="Magento_Store::switch/languages.phtml">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Magento\Store\ViewModel\SwitcherUrlProvider</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+        <move element="currency" destination="header.panel.wrapper" before="store_language" as="currency"/>
+        <move element="minicart" destination="header.panel.wrapper" after="-" as="minicart"/>
+        <move element="store_language" destination="header.panel.wrapper" before="minicart" as="store_language"/>
+        <referenceBlock name="minicart">
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="minicart_content" xsi:type="array">
+                            <item name="children" xsi:type="array">
+                                <item name="extra_info" xsi:type="array">
+                                    <item name="children" xsi:type="array">
+                                        <item name="minicart.shipping" xsi:type="array">
+                                            <item name="component" xsi:type="string">Magento_Checkout/js/view/checkout/minicart/shipping</item>
+                                            <item name="config" xsi:type="array">
+                                                <item name="template" xsi:type="string">Magento_Checkout/minicart/shipping</item>
+                                            </item>
+                                        </item>
+                                        <item name="minicart.tax" xsi:type="array">
+                                            <item name="component" xsi:type="string">Magento_Checkout/js/view/checkout/minicart/tax</item>
+                                            <item name="config" xsi:type="array">
+                                                <item name="template" xsi:type="string">Magento_Checkout/minicart/tax</item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

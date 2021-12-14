@@ -1,0 +1,107 @@
+<div class="nav-link-new">
+<li class="nav-link-categories"><a class="category-links" href="#">FASHION</a></li>
+    <li class="nav-link-categories"><a class="category-links" href="#">ELECTRONICS</a></li>
+    <ul class="megamenu">
+        <div class="megamenu-content">
+            <div class="megamenu2">
+                <div class="megamenu3"></div>
+                <li class="nav-link-categories"><a class="sub-categories" href="#">MOBILE</a>
+                    <ul class="megamenu-list">
+                        <li><a class="sub-category-links" href="#">Phones</a></li>
+                        <li><a class="sub-category-links" href="#">Tablets</a></li>
+                        <li><a class="sub-category-links" href="#">Wearables</a></li>
+                        <li><a class="sub-category-links" href="#">Virtual Reality</a></li>
+                        <li><a class="sub-category-links" href="#">Audio</a></li>
+                        <li><a class="sub-category-links" href="#">Accessories</a></li>
+                    </ul>
+                </li>
+            </div>
+            <div class="megamenu2">
+                <div class="megamenu3"></div>
+                <li class="nav-link-categories"><a class="sub-categories" href="#">CAMERAS</a>
+                    <ul class="megamenu-list">
+                        <li><a class="sub-category-links" href="#">MP3 Players</a></li>
+                        <li><a class="sub-category-links" href="#">Format Shoes</a></li>
+                        <li><a class="sub-category-links" href="#">Casual Shoes</a></li>
+                        <li><a class="sub-category-links" href="#">Sandals</a></li>
+                        <li><a class="sub-category-links" href="#">Boots</a></li>
+                        <li><a class="sub-category-links" href="#">Slippers</a></li>
+                    </ul>
+                </li>
+            </div>
+            <div class="megamenu2">
+                <div class="megamenu3"></div>
+                <li class="nav-link-categories"><a class="sub-categories" href="#">TELEVISIONS</a>
+                    <ul class="megamenu-list">
+                        <li><a class="sub-category-links" href="#">Televisions</a></li>
+                        <li><a class="sub-category-links" href="#">Home Theater</a></li>
+                        <li><a class="sub-category-links" href="#">Sound Bars</a></li>
+                        <li><a class="sub-category-links" href="#">Projectors</a></li>
+                        <li><a class="sub-category-links" href="#">Blu-ray Players</a></li>
+                        <li><a class="sub-category-links" href="#">DVD Players</a></li>
+                    </ul>
+                </li>
+            </div>
+            <div class="megamenu2">
+                <div class="megamenu3"></div>
+                <li class="nav-link-categories"><a class="sub-categories" href="#">COMPUTING</a>
+                    <ul class="megamenu-list">
+                        <li><a class="sub-category-links" href="#">MP3 Players</a></li>
+                        <li><a class="sub-category-links" href="#">Format Shoes</a></li>
+                        <li><a class="sub-category-links" href="#">Casual Shoes</a></li>
+                        <li><a class="sub-category-links" href="#">Sandals</a></li>
+                        <li><a class="sub-category-links" href="#">Boots</a></li>
+                        <li><a class="sub-category-links" href="#">Slippers</a></li>
+                    </ul>
+                </li>
+            </div>
+            <div class="megamenu2">
+                <div class="megamenu3"></div>
+                <li class="nav-link-categories"><a class="sub-categories" href="#">HOME APPLIANCES</a>
+                    <ul class="megamenu-list">
+                        <li><a class="sub-category-links" href="#">Refrigerators</a></li>
+                        <li><a class="sub-category-links" href="#">Ranges</a></li>
+                        <li><a class="sub-category-links" href="#">Cooktops & Hoods</a></li>
+                        <li><a class="sub-category-links" href="#">Microwaves</a></li>
+                        <li><a class="sub-category-links" href="#">Dishwashers</a></li>
+                        <li><a class="sub-category-links" href="#">Washers</a></li>
+                    </ul>
+                </li>
+            </div>
+        </div>
+        <div class="megamenu-bottom">
+            <div class="first-cell">
+                <h1>INTELLIGENT<br>USER INTERFACE</h1>
+                <p>STARTING AT<span class="green-price"> $240</span></p>
+            </div>
+            <div class="second-cell">
+                <p>HOME APPLIANCES</p>
+                <h1>EFFICIENT IN<br>EVERY WAY</h1>
+            </div>
+            <div class="last-cell">
+                <div class="sale-box">
+                    <p class="old-price">$1500.00</p>
+                    <p class="new-price"><span class="usd">$</span>1100<sup>.00</sup></p>
+                    <div class="arrow-down"></div>
+                </div>
+                <p class="white-ad">WINDOWS & LAPTOPS</p>
+                <h1 class="white-header">IMMERSIVE &<br>ADAPTABLE</h1>
+            </div>
+        </div>
+    </ul>
+</li>
+<li class="nav-link-categories"><a class="category-links" href="#">GIFTS</a></li>
+<li class="nav-link-categories"><a class="category-links" href="#">BOOKS</a></li>
+<li class="nav-link-categories"><a class="category-links" href="#">AT HOME</a></li>
+<li class="nav-link-categories"><a class="category-links" href="#">MUSIC</a></li>
+</div>
+
+<script>
+    require(['jquery','jquery/ui'],function($){
+        $(document).ready(function (){
+            $(".category-links").on('click', function(){
+                $(".megamenu").slideToggle();
+            });
+        });
+    });
+</script>

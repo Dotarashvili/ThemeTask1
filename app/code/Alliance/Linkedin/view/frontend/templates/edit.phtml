@@ -1,0 +1,22 @@
+<?php
+
+/** @var \Alliance\Linkedin\Block\Linkedin\Edit $block */
+
+
+
+?>
+
+<form action="<?= $block->escapeUrl($block->getUrl('linkedin/linkedin/editPost')) ?>"
+      <?php if($block->getVisibilityValue() == 0) echo " style='display: none';"; ?> method="post">
+    <div>
+        <label class="label" for="linkedin">Enter Your Linkedin Profile Url</label>
+        <input id="linkedin" name="linkedin" type="url">
+    </div>
+    <div>
+        <button type="submit"
+                class="action save primary"
+                title="<?= $block->escapeHtmlAttr(__('Save Linkedin Profile')) ?>">
+            <span><?= $block->escapeHtml(__('Save Linkedin Profile')) ?></span>
+        </button>
+    </div>
+</form>

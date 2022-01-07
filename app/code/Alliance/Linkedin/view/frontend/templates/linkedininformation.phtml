@@ -1,0 +1,26 @@
+<?php
+/** @var \Alliance\Linkedin\Block\Linkedin\Edit $block */
+
+?>
+<div class="block block-dashboard-company"  <?php if($block->getVisibilityValue() == 0) echo " style='display: none';"; ?>>
+    <div class="block-title">
+        <strong><?= $block->escapeHtml(__('Linkedin Information')) ?></strong>
+        <a class="action edit" href="http://example.com/linkedin/linkedin/edit/"><span><?= $block->escapeHtml(__('Change Linkedin Information')) ?></span></a>
+    </div>
+    <div class="block-content">
+        <div class="box box-billing-address">
+            <strong class="box-title">
+                <span><?= $block->escapeHtml(__('This is your Linkedin Profile Url:')) ?></span>
+            </strong>
+            <div class="box-content">
+                <?php
+                    if ($block->getLinkedinInformation() != null){
+                        echo $block->getLinkedinInformation();
+                    }else{
+                        echo 'You Have Not Set Linkedin Profile Url';
+                    }
+                ?>
+            </div>
+        </div>
+    </div>
+</div>
